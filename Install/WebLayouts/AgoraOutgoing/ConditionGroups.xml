@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ConditionGroups>
+  <ConditionGroupsRow RowID="3254F9D9-BD20-42FF-8F20-E174E18D90BF" OwnServerID="00000000-0000-0000-0000-000000000000" ChangeServerID="00000000-0000-0000-0000-000000000000" ConditionGroupID="3254F9D9-BD20-42FF-8F20-E174E18D90BF" LocationID="7cf57200-ae68-4bca-ba7f-2243a9f783bc" IsActive="1">
+    <Conditions>
+      <ConditionsRow RowID="DDEA3A66-61CB-4F57-A711-2E03F4A48B46" OwnServerID="00000000-0000-0000-0000-000000000000" ChangeServerID="00000000-0000-0000-0000-000000000000" Order="0" LayoutID="DEE24B13-CE6D-4D1A-8446-D36A902BDBCB">
+        <ConditionItems>
+          <ConditionItemsRow RowID="A6F31C28-E6DF-4D35-B1BB-E811E292E35A" OwnServerID="00000000-0000-0000-0000-000000000000" ChangeServerID="00000000-0000-0000-0000-000000000000" ConditionTypeID="CD3C67F6-A932-4E9F-8C95-E26D386E1AF6" Value="5ed7bc0e-0f55-42e0-a70b-35a910a04aba" />
+        </ConditionItems>
+      </ConditionsRow>
+      <ConditionsRow RowID="BA71BFE7-9782-4B1F-BF69-802DDAF79518" OwnServerID="00000000-0000-0000-0000-000000000000" ChangeServerID="00000000-0000-0000-0000-000000000000" Order="1" LayoutID="B9EB35EE-D5D7-498C-AE96-636C8C48735C">
+        <ConditionItems>
+          <ConditionItemsRow RowID="A30EDE65-944C-4A4E-92A4-D5CA87CD025A" OwnServerID="00000000-0000-0000-0000-000000000000" ChangeServerID="00000000-0000-0000-0000-000000000000" ConditionTypeID="CD3C67F6-A932-4E9F-8C95-E26D386E1AF6" Value="0b7caa3c-a72f-4484-b4ba-60ae88ffee6d" />
+        </ConditionItems>
+      </ConditionsRow>
+      <ConditionsRow RowID="EEE1B646-D60F-4EE2-93FF-E33205B9B704" OwnServerID="00000000-0000-0000-0000-000000000000" ChangeServerID="00000000-0000-0000-0000-000000000000" Order="2" LayoutID="D6B844F1-0C6C-4B2C-A97D-126444D44053">
+        <ConditionItems>
+          <ConditionItemsRow RowID="A29C9D41-0A3C-4B2D-95D3-26984C053D70" OwnServerID="00000000-0000-0000-0000-000000000000" ChangeServerID="00000000-0000-0000-0000-000000000000" ConditionTypeID="CD3C67F6-A932-4E9F-8C95-E26D386E1AF6" Value="c4c5e860-191b-47b3-a865-6ccc1fac636a" />
+        </ConditionItems>
+      </ConditionsRow>
+    </Conditions>
+  </ConditionGroupsRow>
+  <ConditionGroupsRow LocationID="DV.MainMenu" RowID="503b6430-f143-49c8-b09a-667656731deb" IsActive="1" InstanceID="3200c1f1-6caa-4c73-a169-78f3a12d155c" ConditionGroupID="503b6430-f143-49c8-b09a-667656731deb">
+    <Conditions>
+      <ConditionsRow Order="0" LayoutID="69d61164-1022-49c9-b62b-630875299f64" RowID="b7b5fffe-419e-444a-b13f-b270959916a1" InstanceID="3200c1f1-6caa-4c73-a169-78f3a12d155c" />
+    </Conditions>
+  </ConditionGroupsRow>
+</ConditionGroups>

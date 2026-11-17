@@ -1,0 +1,11 @@
+{
+    "Delivery": {
+        "template": "5e395d62-9f12-4268-9c85-2140dba17c73",
+        "instance": "36039f07-e314-44d8-92a6-887e6bcbf938"
+    },
+    "Archive": {
+        "template": "29383eab-d466-493c-b051-fc423b9b4d1a",
+        "instance": "d9cc9e64-dc83-48e0-aaf3-c40173810839"
+    },
+    "legacyTasksDisabled": true
+}

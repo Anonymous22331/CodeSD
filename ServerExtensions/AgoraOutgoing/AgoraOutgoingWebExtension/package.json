@@ -1,0 +1,23 @@
+{
+    "name": "agora-outgoing-web-client",
+    "version": "1.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "typecheck": "tsc --noEmit && tsc -p tools/tsconfig.json --noEmit",
+        "build": "npm run typecheck && tsx tools/build.ts",
+        "verify": "tsx tools/verify.ts",
+        "verify:browser": "tsx tools/browser-check.ts"
+    },
+    "devDependencies": {
+        "@types/node": "18.19.70",
+        "esbuild": "0.24.2",
+        "tsx": "4.19.2",
+        "typescript": "5.7.3",
+        "@docsvision/webclient": "5.17.0",
+        "playwright-core": "1.48.2"
+    },
+    "overrides": {
+        "@types/react-native": "0.63.0"
+    }
+}

@@ -1,0 +1,23 @@
+.agora-outgoing-card{font-size:14px;line-height:1.45}
+.agora-outgoing-card span:not(.dv-ico):not([class*="icon"]),.agora-outgoing-card a,.agora-outgoing-card td,.agora-outgoing-card th,.agora-outgoing-card strong,.agora-outgoing-card small,.agora-outgoing-card p{font-size:14px!important}
+.agora-outgoing-card .dv-control,.agora-outgoing-card input,.agora-outgoing-card textarea,.agora-outgoing-card button,.agora-outgoing-card label,.agora-outgoing-card .placeholder,.agora-outgoing-card .title,.agora-outgoing-card .text,.agora-outgoing-card .label,.agora-outgoing-card .system-label span,.agora-outgoing-card .staff-directory-items-helper,.agora-outgoing-card .directory-box{font-size:14px!important}
+.agora-outgoing-card [data-control-name="contentBlock"]{box-sizing:border-box;padding:20px;min-width:0}
+.agora-outgoing-card .agora-field-group{box-sizing:border-box;margin:0 0 16px;padding:18px;background:#fff;border:1px solid #dce2e8;border-radius:6px;width:100%!important;min-width:0!important}
+.agora-outgoing-card .agora-group-title{display:block;font-size:14px;font-weight:600;margin:0 0 16px;color:#24364b}
+.agora-outgoing-card .agora-grid>div>.system-disclosure-body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px;align-items:start;text-align:left!important}
+.agora-outgoing-card .agora-grid>div>.system-disclosure-body>.dv-control{width:100%!important;min-width:0!important;box-sizing:border-box;margin:0}
+.agora-outgoing-card .agora-grid>div>.system-disclosure-body>.agora-group-title,.agora-outgoing-card .agora-grid>div>.system-disclosure-body>.agora-wide{grid-column:1/-1}
+.agora-outgoing-card [data-control-name="agoraContent"] textarea{min-height:100px;resize:vertical}
+.agora-outgoing-card .agora-field-group .input-cell{min-height:36px}
+.agora-outgoing-card .agora-field-group .system-label{line-height:1.5}
+.agora-outgoing-card .agora-field-group .title{font-weight:600}
+.agora-outgoing-card [data-control-name="agoraActions"] .system-disclosure-body{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.agora-outgoing-card [data-control-name="agoraActionsTitle"]{flex-basis:100%}
+.agora-outgoing-card [data-control-name="headerLabel"]{font-size:14px!important;font-weight:600}
+@media(max-width:760px){.agora-outgoing-card [data-control-name="contentBlock"]{padding:12px}.agora-outgoing-card .agora-field-group{padding:14px}.agora-outgoing-card .agora-grid>div>.system-disclosure-body{grid-template-columns:minmax(0,1fr);gap:14px}.agora-outgoing-card .agora-grid>div>.system-disclosure-body>.dv-control{grid-column:1}}
+.agora-outgoing-card .system-custom-button{margin:4px 8px 4px 0}
+.agora-action-dialog{border:1px solid #dce2e8;border-radius:8px;padding:24px;width:520px;max-width:90vw}
+.agora-action-dialog::backdrop{background:rgba(0,0,0,.35)}
+.agora-action-dialog select,.agora-action-dialog textarea{display:block;width:100%;margin:12px 0;padding:8px}
+.agora-action-dialog textarea{height:110px;resize:vertical}
+.agora-action-dialog button{padding:8px 16px;margin-right:8px}

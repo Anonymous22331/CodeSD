@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Agora.Outgoing.ClientRules</AssemblyName>
+    <RequiresDocsvisionSdk>true</RequiresDocsvisionSdk>
+  </PropertyGroup>
+</Project>

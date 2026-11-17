@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>Agora.Outgoing.SmokeCheck</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Workflow\AgoraOutgoingWorkflow\AgoraOutgoingWorkflow.csproj" />
+  </ItemGroup>
+</Project>

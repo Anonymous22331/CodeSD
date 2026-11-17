@@ -1,0 +1,865 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Layout LayoutID="69d61164-1022-49c9-b62b-630875299f64" Name="АГОРА — Главное меню" LayoutFileID="b05753fd-a476-4ebb-a050-3dc5469e6be4" LocationID="DV.MainMenu" LayoutType="0" InstanceID="3200c1f1-6caa-4c73-a169-78f3a12d155c" RowID="69d61164-1022-49c9-b62b-630875299f64" OwnServerID="00000000-0000-0000-0000-000000000000" ChangeServerID="00000000-0000-0000-0000-000000000000">
+  <File FileID="b05753fd-a476-4ebb-a050-3dc5469e6be4" OwnerCardID="3200C1F1-6CAA-4C73-A169-78F3A12D155C" Name="АГОРА — Главное меню" StandardAttribs="0" ExtendedAttribs="0">
+    <Element Id="aee59fa1-154a-4620-8d9d-520fbf6c835e" Type="Layout">
+      <Properties>
+        <Property Name="Name" Value="root" Type="System.String, mscorlib" IsAvailable="true" />
+        <Property Name="CardOpening" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+        <Property Name="CardOpened" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+        <Property Name="CardSaving" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+        <Property Name="PrepareCardSaving" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+        <Property Name="CardSaved" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+        <Property Name="CardStateChanging" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+        <Property Name="CardLayoutSwitching" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+        <Property Name="CardDeleting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+        <Property Name="CardDeleted" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+        <Property Name="AllControlsLoaded" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+        <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+        <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+        <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+      </Properties>
+      <Elements>
+        <Element Id="26d8bb8c-62bf-4fa8-add8-5967c6ca6977" Type="MainMenu">
+          <Properties>
+            <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+            <Property Name="Name" Value="appMainMenu" Type="System.String, mscorlib" IsAvailable="true" />
+            <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>true</Desktop>
+                <Tablet>true</Tablet>
+                <Smartphone>true</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfBoolean>
+            </Property>
+            <Property Name="StandardCssClass" Value="system-main-menu" Type="System.String, mscorlib" IsAvailable="true" />
+            <Property Name="MinWidth" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfDouble xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>10</Desktop>
+                <Tablet>10</Tablet>
+                <Smartphone>10</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfDouble>
+            </Property>
+            <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+            <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+            <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+            <Property Name="Toggle" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+          </Properties>
+          <Elements>
+            <Element Id="3a7e3d2c-4248-478f-bea5-f803d54d3757" Type="RightMainMenuItemPanel">
+              <Properties>
+                <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="Name" Value="rightMainMenuItemPanel" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                  <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <Desktop>true</Desktop>
+                    <Tablet>true</Tablet>
+                    <Smartphone>true</Smartphone>
+                    <CanChange>true</CanChange>
+                  </DeviceDependentPropertyOfBoolean>
+                </Property>
+                <Property Name="StandardCssClass" Value="system-right-main-menu-item-panel" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="MinWidth" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                  <DeviceDependentPropertyOfDouble xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <Desktop>10</Desktop>
+                    <Tablet>10</Tablet>
+                    <Smartphone>10</Smartphone>
+                    <CanChange>true</CanChange>
+                  </DeviceDependentPropertyOfDouble>
+                </Property>
+                <Property Name="Location" Value="2" Type="System.Int32, mscorlib" IsAvailable="true" />
+                <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+              </Properties>
+              <Elements>
+                <Element Id="5161f7a4-1062-40e1-9a90-3dc8dce80b0b" Type="ConfigurableMainMenuContainerButton">
+                  <Properties>
+                    <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Name" Value="configurationButton" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>true</Desktop>
+                        <Tablet>true</Tablet>
+                        <Smartphone>true</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfBoolean>
+                    </Property>
+                    <Property Name="StandardCssClass" Value="system-configurable-main-menu-container-button" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="TabStop" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="IconClass" Value="dv-ico ico-folder-settings" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowBeginConfigurationItem" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowRestoreItem" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowAttachFolderItem" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ConfigurableContainerName" Value="configurable" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="UserFoldersName" Value="userFolders" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="BeginConfigurationClicked" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="RestoreClicked" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="AttachFolderClicked" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="RefreshFoldersClicked" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                  </Properties>
+                </Element>
+                <Element Id="719ed968-33e0-4587-a490-b76f36b2d7d4" Type="RefreshFoldersTreeButton" ResolverType="RefreshFoldersTreeButtonControlResolver">
+                  <Properties>
+                    <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Name" Value="refreshFoldersTreeButton" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>true</Desktop>
+                        <Tablet>true</Tablet>
+                        <Smartphone>true</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfBoolean>
+                    </Property>
+                    <Property Name="StandardCssClass" Value="system-layout-icon-button" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Tip" Value="1acd1d68-4afb-4c42-aca6-340fa6bc46c8" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                    <Property Name="TabStop" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="IconClass" Value="dv-ico ico-refresh-white refresh-folders-button" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                  </Properties>
+                </Element>
+                <Element Id="80c048ee-1e9e-4172-9565-494a47ef9c4b" Type="MainMenuPinButton">
+                  <Properties>
+                    <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Name" Value="mainMenuPinButton" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>true</Desktop>
+                        <Tablet>true</Tablet>
+                        <Smartphone>true</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfBoolean>
+                    </Property>
+                    <Property Name="StandardCssClass" Value="system-main-menu-pin-button" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Tip" Value="496120ec-77a2-4cfd-8d61-2bdd7cf77d6c" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                    <Property Name="TabStop" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="MainMenuName" Value="appMainMenu" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="PinIconClassName" Value="dv-ico ico-pinn" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="UnpinIconClassName" Value="dv-ico ico-unpinn" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                  </Properties>
+                </Element>
+              </Elements>
+            </Element>
+            <Element Id="1582b2be-ff55-4765-8406-cad1dc905e44" Type="LinkMainMenuItem">
+              <Properties>
+                <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="Name" Value="dashboard" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                  <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <Desktop>true</Desktop>
+                    <Tablet>true</Tablet>
+                    <Smartphone>true</Smartphone>
+                    <CanChange>true</CanChange>
+                  </DeviceDependentPropertyOfBoolean>
+                </Property>
+                <Property Name="StandardCssClass" Value="system-link-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="Text" Value="21358094-2b07-400e-bdcb-ac16c32c2701" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                <Property Name="IconClass" Value="dv-ico ico-home" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                <Property Name="Configurable" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                <Property Name="Href" Value="#/Dashboard" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+              </Properties>
+            </Element>
+            <Element Id="e3dad2b3-cdca-4fb0-b15c-fb9f8a3f8bf1" Type="ConfigurableMainMenuContainer" ResolverType="ConfigurableMainMenuContainerControlResolver">
+              <Properties>
+                <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="Name" Value="configurable" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                  <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <Desktop>true</Desktop>
+                    <Tablet>true</Tablet>
+                    <Smartphone>true</Smartphone>
+                    <CanChange>true</CanChange>
+                  </DeviceDependentPropertyOfBoolean>
+                </Property>
+                <Property Name="StandardCssClass" Value="system-configurable-main-menu-container" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="ConfigurationStarting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="ConfigurationStarted" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="ConfigurationSaving" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="ConfigurationSaved" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="ConfigurationFinishing" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                <Property Name="ConfigurationFinished" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+              </Properties>
+              <Elements>
+                <Element Id="8685e8e5-d0e1-4b01-bc40-e95b6f52262f" Type="SearchResultsMainMenuItem">
+                  <Properties>
+                    <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Name" Value="searchResultsMainMenuItem" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>true</Desktop>
+                        <Tablet>true</Tablet>
+                        <Smartphone>true</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfBoolean>
+                    </Property>
+                    <Property Name="StandardCssClass" Value="system-link-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Text" Value="c3265945-87fd-42a1-80da-8a4c21a2900e" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                    <Property Name="IconClass" Value="dv-ico dv-ico-search" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                  </Properties>
+                </Element>
+                <Element Id="42370b16-f10c-462b-a45c-aaa57e91891b" Type="LinkMainMenuItem">
+                  <Properties>
+                    <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Name" Value="favoritesMainMenuItem" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>true</Desktop>
+                        <Tablet>true</Tablet>
+                        <Smartphone>true</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfBoolean>
+                    </Property>
+                    <Property Name="StandardCssClass" Value="system-link-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Text" Value="4099e33e-f05f-41f7-ae1f-620af660ca7e" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                    <Property Name="IconClass" Value="dv-ico dv-ico-favorites" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Compact" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                    <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Href" Value="#/Folder/Favorites" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                  </Properties>
+                </Element>
+                <Element Id="342a63c7-4430-4fe4-911a-7925e63dc30f" Type="LinkMainMenuItem">
+                  <Properties>
+                    <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Name" Value="recentCardsMainMenuItem" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>true</Desktop>
+                        <Tablet>true</Tablet>
+                        <Smartphone>true</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfBoolean>
+                    </Property>
+                    <Property Name="StandardCssClass" Value="system-link-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Text" Value="95b96fa6-6109-4e83-9dd7-8fb21b3fe419" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                    <Property Name="IconClass" Value="dv-ico dv-ico-history" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Compact" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                    <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Href" Value="#/Folder/RecentCards" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                  </Properties>
+                </Element>
+                <Element Id="1d159ab7-1374-4b04-bd83-ac9c26455870" Type="GroupMainMenuItem">
+                  <Properties>
+                    <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Name" Value="groupMainMenuItemTasks" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>true</Desktop>
+                        <Tablet>true</Tablet>
+                        <Smartphone>true</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfBoolean>
+                    </Property>
+                    <Property Name="StandardCssClass" Value="system-main-menu-group-item" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Order" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfInt32 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>0</Desktop>
+                        <Tablet>0</Tablet>
+                        <Smartphone>0</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfInt32>
+                    </Property>
+                    <Property Name="Text" Value="3f94c5d8-9391-4597-99ed-fee97bd7bb1f" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                    <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandChildrenLevel" Value="3" Type="System.Int32, mscorlib" IsAvailable="true" />
+                    <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="IsExpanded" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowRoot" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandedToggling" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandedToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                  </Properties>
+                  <Elements>
+                    <Element Id="68c6f379-1173-4ba7-96e1-1244745cd4c7" Type="FolderMainMenuItem" ResolverType="FolderMainMenuItemControlResolver">
+                      <Properties>
+                        <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Name" Value="folderMainMenuItemTasks" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                          <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <Desktop>true</Desktop>
+                            <Tablet>true</Tablet>
+                            <Smartphone>true</Smartphone>
+                            <CanChange>true</CanChange>
+                          </DeviceDependentPropertyOfBoolean>
+                        </Property>
+                        <Property Name="StandardCssClass" Value="system-folder-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Text" Value="" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                        <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Color" Value="Tasks" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="FolderId" Value="8df9fbb0-8325-4e6e-a29b-9c5064ef8502" Type="System.Guid, mscorlib" IsAvailable="true" />
+                        <Property Name="SubfoldersPreloadLevel" Value="2" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowSubfolders" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowRoot" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="CompactChildren" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowIcon" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowChildrenIcons" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ForceToggleIdent" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ForceVirtualFolderSearch" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="AllowFolderManagement" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                      </Properties>
+                    </Element>
+                  </Elements>
+                </Element>
+                <Element Id="b058fb09-8819-4a1a-9c01-b28bacf51f59" Type="GroupMainMenuItem">
+                  <Properties>
+                    <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Name" Value="groupMainMenuItemDocuments" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>true</Desktop>
+                        <Tablet>true</Tablet>
+                        <Smartphone>true</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfBoolean>
+                    </Property>
+                    <Property Name="StandardCssClass" Value="system-main-menu-group-item" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Order" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfInt32 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>0</Desktop>
+                        <Tablet>0</Tablet>
+                        <Smartphone>0</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfInt32>
+                    </Property>
+                    <Property Name="Text" Value="b20c1a13-59af-4af3-a408-53417eb76e23" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                    <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                    <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="IsExpanded" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowRoot" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandedToggling" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandedToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                  </Properties>
+                  <Elements>
+                    <Element Id="abbc20cd-7d3d-4848-af7c-93d3d480b6b8" Type="FolderMainMenuItem" ResolverType="FolderMainMenuItemControlResolver">
+                      <Properties>
+                        <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Name" Value="folderMainMenuItemDocuments" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                          <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <Desktop>true</Desktop>
+                            <Tablet>true</Tablet>
+                            <Smartphone>true</Smartphone>
+                            <CanChange>true</CanChange>
+                          </DeviceDependentPropertyOfBoolean>
+                        </Property>
+                        <Property Name="StandardCssClass" Value="system-folder-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Text" Value="" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                        <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Color" Value="Documents" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="FolderId" Value="30292a62-e596-4fe0-a901-19ee81124dc1" Type="System.Guid, mscorlib" IsAvailable="true" />
+                        <Property Name="SubfoldersPreloadLevel" Value="1" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowSubfolders" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowRoot" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="CompactChildren" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowIcon" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowChildrenIcons" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ForceToggleIdent" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="AllowFolderManagement" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                      </Properties>
+                    </Element>
+                  </Elements>
+                </Element>
+                <Element Id="bc47534f-9306-4e2e-a5e6-76663808a6b6" Type="FolderMainMenuItem" ResolverType="FolderMainMenuItemControlResolver">
+                  <Properties>
+                    <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Name" Value="agoraCorrespondenceMenu" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>true</Desktop>
+                        <Tablet>true</Tablet>
+                        <Smartphone>true</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfBoolean>
+                    </Property>
+                    <Property Name="StandardCssClass" Value="system-folder-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Text" Value="КОРРЕСПОНДЕНЦИЯ" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandChildrenLevel" Value="3" Type="System.Int32, mscorlib" IsAvailable="true" />
+                    <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Color" Value="Documents" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="FolderId" Value="47424043-ecfa-48e9-829a-4c0f88a909fb" Type="System.Guid, mscorlib" IsAvailable="true" />
+                    <Property Name="SubfoldersPreloadLevel" Value="3" Type="System.Int32, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowSubfolders" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowRoot" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="CompactChildren" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowIcon" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowChildrenIcons" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ForceToggleIdent" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="AllowFolderManagement" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Type="System.Boolean, mscorlib" Name="ForceVirtualFolderSearch" Value="true" IsAvailable="true" />
+                  </Properties>
+                </Element>
+                <Element Id="20d2f0b2-09f8-4a41-93fa-c6c0600e705c" Type="GroupMainMenuItem">
+                  <Properties>
+                    <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Name" Value="groupMainMenuItemSubstitution" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>true</Desktop>
+                        <Tablet>true</Tablet>
+                        <Smartphone>true</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfBoolean>
+                    </Property>
+                    <Property Name="StandardCssClass" Value="system-main-menu-group-item" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Order" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfInt32 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>0</Desktop>
+                        <Tablet>0</Tablet>
+                        <Smartphone>0</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfInt32>
+                    </Property>
+                    <Property Name="Text" Value="6a18d5ff-b080-46da-9c73-a65b02706fe5" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                    <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                    <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="IsExpanded" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowRoot" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandedToggling" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandedToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                  </Properties>
+                  <Elements>
+                    <Element Id="aea2292b-2bf7-445a-b9f2-94c5a50cf29f" Type="FolderMainMenuItem" ResolverType="FolderMainMenuItemControlResolver">
+                      <Properties>
+                        <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Name" Value="folderMainMenuItemSubstitution" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                          <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <Desktop>true</Desktop>
+                            <Tablet>true</Tablet>
+                            <Smartphone>true</Smartphone>
+                            <CanChange>true</CanChange>
+                          </DeviceDependentPropertyOfBoolean>
+                        </Property>
+                        <Property Name="StandardCssClass" Value="system-folder-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Color" Value="folder-default" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="FolderId" Value="7034106e-e76d-4611-bd98-7b0ba42b8db4" Type="System.Guid, mscorlib" IsAvailable="true" />
+                        <Property Name="SubfoldersPreloadLevel" Value="1" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowSubfolders" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowRoot" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="CompactChildren" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowIcon" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowChildrenIcons" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ForceToggleIdent" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="AllowFolderManagement" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                      </Properties>
+                    </Element>
+                  </Elements>
+                </Element>
+                <Element Id="0f6c4175-a062-4162-b45b-3eba1ba6b6c1" Type="GroupMainMenuItem">
+                  <Properties>
+                    <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Name" Value="groupMainMenuItemContracts" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>true</Desktop>
+                        <Tablet>true</Tablet>
+                        <Smartphone>true</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfBoolean>
+                    </Property>
+                    <Property Name="StandardCssClass" Value="system-main-menu-group-item" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Order" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfInt32 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>0</Desktop>
+                        <Tablet>0</Tablet>
+                        <Smartphone>0</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfInt32>
+                    </Property>
+                    <Property Name="Text" Value="9bdd49f5-045b-4291-ac49-490279075fc7" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                    <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                    <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="IsExpanded" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowRoot" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandedToggling" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandedToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                  </Properties>
+                  <Elements>
+                    <Element Id="8b5015f4-3c54-42a9-90f4-8e8c5781fe3b" Type="FolderMainMenuItem" ResolverType="FolderMainMenuItemControlResolver">
+                      <Properties>
+                        <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Name" Value="folderMainMenuItemContracts" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                          <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <Desktop>true</Desktop>
+                            <Tablet>true</Tablet>
+                            <Smartphone>true</Smartphone>
+                            <CanChange>true</CanChange>
+                          </DeviceDependentPropertyOfBoolean>
+                        </Property>
+                        <Property Name="StandardCssClass" Value="system-folder-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Color" Value="folder-default" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="FolderId" Value="40273c7b-9576-475b-853a-5b1d040f8560" Type="System.Guid, mscorlib" IsAvailable="true" />
+                        <Property Name="SubfoldersPreloadLevel" Value="1" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowSubfolders" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowRoot" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="CompactChildren" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowIcon" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowChildrenIcons" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ForceToggleIdent" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="AllowFolderManagement" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                      </Properties>
+                    </Element>
+                    <Element Id="e60770e9-b6f4-42ae-86f5-7769fdf193d6" Type="FolderMainMenuItem" ResolverType="FolderMainMenuItemControlResolver">
+                      <Properties>
+                        <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Name" Value="folderMainMenuItemContractsForFamiliarization" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                          <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <Desktop>true</Desktop>
+                            <Tablet>true</Tablet>
+                            <Smartphone>true</Smartphone>
+                            <CanChange>true</CanChange>
+                          </DeviceDependentPropertyOfBoolean>
+                        </Property>
+                        <Property Name="StandardCssClass" Value="system-folder-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Color" Value="folder-default" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="FolderId" Value="c1c2c2ce-aad4-4ed0-9514-4126f9cd4364" Type="System.Guid, mscorlib" IsAvailable="true" />
+                        <Property Name="SubfoldersPreloadLevel" Value="1" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowSubfolders" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowRoot" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="CompactChildren" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowIcon" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowChildrenIcons" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ForceToggleIdent" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="AllowFolderManagement" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                      </Properties>
+                    </Element>
+                    <Element Id="ab66028c-58b8-4b7e-b414-f4db5880dfc7" Type="FolderMainMenuItem" ResolverType="FolderMainMenuItemControlResolver">
+                      <Properties>
+                        <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Name" Value="folderMainMenuItemMyContracts" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                          <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <Desktop>true</Desktop>
+                            <Tablet>true</Tablet>
+                            <Smartphone>true</Smartphone>
+                            <CanChange>true</CanChange>
+                          </DeviceDependentPropertyOfBoolean>
+                        </Property>
+                        <Property Name="StandardCssClass" Value="system-folder-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Text" Value="" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                        <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Color" Value="folder-default" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="FolderId" Value="5c1e72c2-0ea7-46e2-a257-177cc6f21f61" Type="System.Guid, mscorlib" IsAvailable="true" />
+                        <Property Name="SubfoldersPreloadLevel" Value="1" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowSubfolders" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowRoot" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="CompactChildren" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowIcon" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowChildrenIcons" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ForceToggleIdent" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="AllowFolderManagement" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                      </Properties>
+                    </Element>
+                    <Element Id="181c3934-a5fb-47dc-8f46-84b8c56bbe9c" Type="FolderMainMenuItem" ResolverType="FolderMainMenuItemControlResolver">
+                      <Properties>
+                        <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Name" Value="folderMainMenuItemContractsReports" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                          <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <Desktop>true</Desktop>
+                            <Tablet>true</Tablet>
+                            <Smartphone>true</Smartphone>
+                            <CanChange>true</CanChange>
+                          </DeviceDependentPropertyOfBoolean>
+                        </Property>
+                        <Property Name="StandardCssClass" Value="system-folder-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Color" Value="folder-default" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="FolderId" Value="ef5a72ce-b2df-4566-9029-cf13d0032242" Type="System.Guid, mscorlib" IsAvailable="true" />
+                        <Property Name="SubfoldersPreloadLevel" Value="1" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowSubfolders" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowRoot" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="CompactChildren" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowIcon" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ShowChildrenIcons" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ForceToggleIdent" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="AllowFolderManagement" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                      </Properties>
+                    </Element>
+                  </Elements>
+                </Element>
+                <Element Id="5fb7a600-98ef-4626-814f-6b4368b4ef92" Type="UserFoldersMainMenuItem" ResolverType="UserFoldersMainMenuItemControlResolver">
+                  <Properties>
+                    <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Name" Value="userFolders" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>true</Desktop>
+                        <Tablet>true</Tablet>
+                        <Smartphone>true</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfBoolean>
+                    </Property>
+                    <Property Name="StandardCssClass" Value="system-user-folders-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MinWidth" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfDouble xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>10</Desktop>
+                        <Tablet>10</Tablet>
+                        <Smartphone>10</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfDouble>
+                    </Property>
+                    <Property Name="Width" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfDouble xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>100</Desktop>
+                        <Tablet>100</Tablet>
+                        <Smartphone>100</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfDouble>
+                    </Property>
+                    <Property Name="Order" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfInt32 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>0</Desktop>
+                        <Tablet>0</Tablet>
+                        <Smartphone>0</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfInt32>
+                    </Property>
+                    <Property Name="Text" Value="196f8b73-4b58-4921-9230-f68dc37efc05" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                    <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                    <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowRoot" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="FoldersPreloadLevel" Value="1" Type="System.Int32, mscorlib" IsAvailable="true" />
+                    <Property Name="CompactFolders" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowIcons" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="AllowFolderManagement" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandedToggling" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandedToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                  </Properties>
+                </Element>
+                <Element Id="5634f316-48f4-4a1e-afc4-0063f1f4ea44" Type="GroupMainMenuItem">
+                  <Properties>
+                    <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Name" Value="groupMainMenuItemDirectories" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>true</Desktop>
+                        <Tablet>true</Tablet>
+                        <Smartphone>true</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfBoolean>
+                    </Property>
+                    <Property Name="StandardCssClass" Value="system-main-menu-group-item" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Order" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                      <DeviceDependentPropertyOfInt32 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                        <Desktop>0</Desktop>
+                        <Tablet>0</Tablet>
+                        <Smartphone>0</Smartphone>
+                        <CanChange>true</CanChange>
+                      </DeviceDependentPropertyOfInt32>
+                    </Property>
+                    <Property Name="Text" Value="1124ef17-57d0-42b4-9384-13e19c884e0f" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                    <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                    <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="IsExpanded" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="ShowRoot" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Animation" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                    <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandedToggling" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ExpandedToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                    <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                  </Properties>
+                  <Elements>
+                    <Element Id="19ad43b9-e57f-4b71-9db5-d0a951de69f7" Type="LinkMainMenuItem">
+                      <Properties>
+                        <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Name" Value="staffDirectoryLink" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Visibility" Type="System.String, mscorlib" ResolverType="DeviceDependent" IsAvailable="true">
+                          <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                            <Desktop>true</Desktop>
+                            <Tablet>true</Tablet>
+                            <Smartphone>true</Smartphone>
+                            <CanChange>true</CanChange>
+                          </DeviceDependentPropertyOfBoolean>
+                        </Property>
+                        <Property Name="StandardCssClass" Value="system-link-main-menu-item" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Text" Value="90e08e9f-3c32-4b9a-b2a7-f691e447e7d9" Type="System.String, mscorlib" ResolverType="Localized" IsAvailable="true" />
+                        <Property Name="Compact" Value="false" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="ExpandChildrenLevel" Value="0" Type="System.Int32, mscorlib" IsAvailable="true" />
+                        <Property Name="Configurable" Value="true" Type="System.Boolean, mscorlib" IsAvailable="true" />
+                        <Property Name="Href" Value="#/DirectoryView/6710b92a-e148-4363-8a6f-1aa0eb18936c" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Click" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOver" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="MouseOut" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selecting" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="Selected" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                        <Property Name="ConfiguredToHideToggled" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+                      </Properties>
+                    </Element>
+                  </Elements>
+                </Element>
+              </Elements>
+            </Element>
+          </Elements>
+        </Element>
+        <Element Id="3c42f53f-b84d-49db-9307-73244138f1bd" Type="ConnectUserFoldersToConfigurableContainerScript">
+          <Properties>
+            <Property Name="Tag" Value="" Type="System.String, mscorlib" IsAvailable="true" />
+            <Property Name="Name" Value="connectUserFoldersToConfigurableContainerScript" Type="System.String, mscorlib" IsAvailable="true" />
+            <Property Name="UserFoldersName" Value="userFolders" Type="System.String, mscorlib" IsAvailable="true" />
+            <Property Name="ConfigurableContainerName" Value="configurable" Type="System.String, mscorlib" IsAvailable="true" />
+          </Properties>
+        </Element>
+      </Elements>
+    </Element>
+  </File>
+</Layout>

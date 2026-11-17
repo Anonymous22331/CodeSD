@@ -1,0 +1,39 @@
+# Local SDK, dependencies and build results.
+.sdk/
+**/node_modules/
+**/bin/
+**/obj/
+**/dist/
+artifacts/
+.vs/
+*.user
+*.suo
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# JavaScript is generated from TypeScript, never maintained as source.
+*.js
+*.js.map
+*.cjs
+*.mjs
+*.ps1
+
+# Machine credentials, signing keys, certificates and runtime data.
+.env
+.env.*
+!.env.example
+*.local.*
+*.snk
+*.pfx
+*.p12
+*.key
+*credential*.xml
+access-export.json
+*.bak
+*.log
+*.jsonl
+*.zip
+*.sddl
+*.eml

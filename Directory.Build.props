@@ -1,0 +1,11 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>5</LangVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>true</Deterministic>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AutoUnifyAssemblyReferences>true</AutoUnifyAssemblyReferences>
+    <DocsvisionSdkPath Condition="'$(DocsvisionSdkPath)' == ''">$(MSBuildThisFileDirectory).sdk</DocsvisionSdkPath>
+  </PropertyGroup>
+</Project>

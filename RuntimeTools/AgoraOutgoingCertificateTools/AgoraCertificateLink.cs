@@ -1,0 +1,90 @@
+﻿using System;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
+
+public static class AgoraCertificateLink
+{
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+    public struct ProviderInfo
+    {
+        [MarshalAs(UnmanagedType.LPWStr)]
+        public string Container;
+        [MarshalAs(UnmanagedType.LPWStr)]
+        public string Provider;
+        public uint Type;
+        public uint Flags;
+        public uint Count;
+        public IntPtr Parameters;
+        public uint KeySpec;
+    }
+
+    /// <summary>
+    /// Читает свойство сертификата через CryptoAPI.
+    /// </summary>
+    [DllImport("crypt32.dll", SetLastError = true)]
+    private static extern bool CertGetCertificateContextProperty(IntPtr context, uint property, IntPtr data, ref uint size);
+
+    /// <summary>
+    /// Сохраняет свойство сертификата через CryptoAPI.
+    /// </summary>
+    [DllImport("crypt32.dll", SetLastError = true)]
+    private static extern bool CertSetCertificateContextProperty(IntPtr context, uint property, uint flags, IntPtr data);
+
+    /// <summary>
+    /// Читает сведения о привязке сертификата к ключевому контейнеру.
+    /// </summary>
+    public static ProviderInfo Read(X509Certificate2 certificate)
+    {
+        uint size = 0;
+        if (!CertGetCertificateContextProperty(certificate.Handle, 2, IntPtr.Zero, ref size))
+        {
+            throw new System.ComponentModel.Win32Exception();
+        }
+
+        IntPtr data = Marshal.AllocHGlobal((int)size);
+        try
+        {
+            if (!CertGetCertificateContextProperty(certificate.Handle, 2, data, ref size))
+            {
+                throw new System.ComponentModel.Win32Exception();
+            }
+
+            return (ProviderInfo)Marshal.PtrToStructure(data, typeof(ProviderInfo));
+        }
+        finally
+        {
+            Marshal.FreeHGlobal(data);
+        }
+    }
+
+    /// <summary>
+    /// Привязывает сертификат к контейнеру закрытого ключа.
+    /// </summary>
+    public static void Bind(X509Certificate2 certificate, string container, string provider, uint type, uint flags, uint keySpec)
+    {
+        var info = new ProviderInfo
+        {
+            Container = container,
+            Provider = provider,
+            Type = type,
+            Flags = flags,
+            Count = 0,
+            Parameters = IntPtr.Zero,
+            KeySpec = keySpec
+        };
+        IntPtr data = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(ProviderInfo)));
+        try
+        {
+            Marshal.StructureToPtr(info, data, false);
+            if (!CertSetCertificateContextProperty(certificate.Handle, 2, 0, data))
+            {
+                throw new System.ComponentModel.Win32Exception();
+            }
+        }
+        finally
+        {
+            Marshal.DestroyStructure(data, typeof(ProviderInfo));
+            Marshal.FreeHGlobal(data);
+        }
+    }
+}
