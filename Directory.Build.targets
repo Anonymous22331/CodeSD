@@ -32,6 +32,6 @@
   </ItemGroup>
   <Target Name="ValidateDocsvisionSdk" BeforeTargets="ResolveAssemblyReferences" Condition="'$(RequiresDocsvisionSdk)' == 'true'">
     <Error Condition="!Exists('$(DocsvisionSdkPath)\DocsVision.Platform.ObjectManager.dll')"
-           Text="Укажите /p:DocsvisionSdkPath=путь-к-локальным-сборкам-Docsvision-5.5. См. README.md. SDK и закрытые ключи в репозитории не хранятся." />
+           Text="Укажите /p:DocsvisionSdkPath=путь-к-локальным-сборкам-Docsvision-5.5. SDK и закрытые ключи в репозитории не хранятся." />
   </Target>
 </Project>

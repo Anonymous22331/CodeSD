@@ -42,8 +42,16 @@ async function checkBrowser(): Promise<void>
 
             if (response.url().includes("/AgoraOutgoing/Execute"))
             {
-                const payload = JSON.parse(response.request().postData() || "{}") as { Method?: string };
-                calls.push({ method: payload.Method || "", status: response.status() });
+                const body = response.request().postData() || "{}";
+                try
+                {
+                    const payload = JSON.parse(body) as { Method?: string };
+                    calls.push({ method: payload.Method || "", status: response.status() });
+                }
+                catch
+                {
+                    errors.push("Invalid JSON request body sent to AgoraOutgoing/Execute");
+                }
             }
         });
 
@@ -71,7 +79,7 @@ async function checkBrowser(): Promise<void>
         const report = { errors, calls, scriptLoads, registeredVersion, artifactStatus: response.status(), expectedHash, actualHash };
         await writeFile(resolve(output, "browser-check.json"), JSON.stringify(report, null, 4));
 
-        if (errors.length > 0 || !response.ok() || actualHash !== expectedHash || registeredVersion !== "1.1.0" || !calls.some(call => call.method === "GetOutgoingWebContext" && call.status === 200))
+        if (errors.length > 0 || !response.ok() || actualHash !== expectedHash || registeredVersion !== "1.2.0" || !calls.some(call => call.method === "GetOutgoingWebContext" && call.status === 200))
         {
             throw new Error("Проверка загрузки TypeScript-модуля на стенде не пройдена; см. browser-check.json.");
         }

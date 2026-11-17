@@ -1,4 +1,5 @@
 import type { EventSender } from "../Models/AgoraLayout";
+import { $OutgoingUi } from "../Services/Abstractions/IOutgoingUiService";
 import { callOperation } from "../Services/OutgoingController";
 import { getLayout, getValue, hasFlag, isUnsaved, loadCreationDefaults, saveIfEditing, showError, updateRouteCaption } from "../Services/LayoutService";
 
@@ -21,7 +22,7 @@ async function executeAction(sender: EventSender, method: string): Promise<void>
     }
     catch (error)
     {
-        showError(error);
+        await showError(layout, error);
     }
     finally
     {
@@ -51,7 +52,8 @@ export function AgoraSend(sender: EventSender): Promise<void>
 /** Запрашивает подтверждение и отменяет подготовку письма. */
 export async function AgoraCancel(sender: EventSender): Promise<void>
 {
-    if (window.confirm("Отменить подготовку этого письма?"))
+    const layout = getLayout(sender);
+    if (await layout.getService($OutgoingUi).confirm("Отменить подготовку этого письма?"))
     {
         await executeAction(sender, "CancelOutgoingDocument");
     }
@@ -60,13 +62,14 @@ export async function AgoraCancel(sender: EventSender): Promise<void>
 /** Сохраняет текущую карточку средствами платформы. */
 export async function AgoraSave(sender: EventSender): Promise<void>
 {
+    const layout = getLayout(sender);
     try
     {
-        await getLayout(sender).saveCard();
+        await layout.saveCard();
     }
     catch (error)
     {
-        showError(error);
+        await showError(layout, error);
     }
 }
 
@@ -94,6 +97,6 @@ export async function AgoraJournalChanged(sender: EventSender): Promise<void>
     }
     catch (error)
     {
-        showError(error);
+        await showError(layout, error);
     }
 }

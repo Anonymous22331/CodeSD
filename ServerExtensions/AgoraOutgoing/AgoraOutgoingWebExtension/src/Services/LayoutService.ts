@@ -1,4 +1,5 @@
 import type { AgoraControl, AgoraLayout, DirectoryValue, EventSender } from "../Models/AgoraLayout";
+import { $OutgoingUi } from "./Abstractions/IOutgoingUiService";
 import { getCreationDefaults } from "./OutgoingController";
 
 /** Получает разметку из аргумента события платформы. */
@@ -10,8 +11,7 @@ export function getLayout(sender: EventSender): AgoraLayout
 /** Находит стандартный контрол по имени из конструктора разметок. */
 export function getControl(layout: AgoraLayout, name: string): AgoraControl | undefined
 {
-    const item = layout.controls.tryGet ? layout.controls.tryGet(name) : layout.controls[name];
-    return item as unknown as AgoraControl | undefined;
+    return layout.controls.tryGet<AgoraControl>(name);
 }
 
 /** Читает значение поля карточки. */
@@ -138,15 +138,15 @@ export function applyContext(layout: AgoraLayout, context: Element): void
 }
 
 /** Показывает пользователю ошибку операции. */
-export function showError(error: unknown): void
+export function showError(layout: AgoraLayout, error: unknown): Promise<void>
 {
-    window.alert(error instanceof Error ? error.message : String(error));
+    return layout.getService($OutgoingUi).showError(error);
 }
 
 /** Определяет, что новая карточка ещё не сохранена в базе. */
 export function isUnsaved(layout: AgoraLayout): boolean
 {
-    return !layout.__agoraPersisted && /^#\/NewCard\//i.test(window.location.hash);
+    return !layout.__agoraPersisted && layout.layoutInfo.action === 2;
 }
 
 /** Заполняет пустое справочное поле или принудительно обновляет значение. */
@@ -164,7 +164,7 @@ function setDefault(layout: AgoraLayout, name: string, model: DirectoryValue | u
 /** Заполняет инициатора, подразделение, журнал и остальные начальные значения. */
 export async function loadCreationDefaults(layout: AgoraLayout): Promise<void>
 {
-    const defaults = await getCreationDefaults(getReferenceId(getValue(layout, "agoraJournal")));
+    const defaults = await getCreationDefaults(layout, getReferenceId(getValue(layout, "agoraJournal")));
     setDefault(layout, "agoraAuthor", defaults.author);
     setDefault(layout, "agoraRegistrationPlace", defaults.unit);
     setDefault(layout, "agoraJournal", defaults.journal);

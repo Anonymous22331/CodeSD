@@ -1,18 +1,7 @@
 import type { ActionChoice, AgoraLayout, DialogResult, EventSender } from "../Models/AgoraLayout";
-import { showActionDialog } from "../Services/ActionDialog";
+import { $OutgoingUi } from "../Services/Abstractions/IOutgoingUiService";
 import { callOperation } from "../Services/OutgoingController";
 import { getLayout, hasFlag, saveIfEditing, showError } from "../Services/LayoutService";
-
-/** Открывает карточку или задание штатным маршрутом Web-клиента. */
-function openCard(id: string | null): void
-{
-    if (!id)
-    {
-        throw new Error("Сервер не вернул идентификатор карточки.");
-    }
-
-    window.location.hash = "#/CardView/" + encodeURIComponent(id);
-}
 
 /** Получает доступные задания, решения и операции документа. */
 async function loadChoices(layout: AgoraLayout): Promise<ActionChoice[]>
@@ -59,7 +48,7 @@ async function executeChoice(layout: AgoraLayout, result: DialogResult): Promise
 
     if (choice.kind === "open")
     {
-        openCard(choice.cardId);
+        await layout.getService($OutgoingUi).openCard(choice.cardId);
         return;
     }
 
@@ -84,21 +73,21 @@ async function executeChoice(layout: AgoraLayout, result: DialogResult): Promise
     if (choice.operation === 27 || choice.operation === 35)
     {
         const response = await callOperation(layout, choice.operation === 27 ? "CreateOutgoingFamiliarizationDraft" : "GetOutgoingApprovalHistory");
-        openCard(response.getAttribute("reconcile"));
+        await layout.getService($OutgoingUi).openCard(response.getAttribute("reconcile") || "");
     }
     else if (choice.operation === 28)
     {
-        const recipient = window.prompt("Адрес получателя в тестовом домене agora.test");
+        const recipient = await layout.getService($OutgoingUi).input("Адрес получателя в тестовом домене agora.test");
         if (!recipient)
         {
             return;
         }
 
-        const message = result.comment || window.prompt("Текст сообщения");
+        const message = result.comment || await layout.getService($OutgoingUi).input("Текст сообщения", true);
         if (message)
         {
             const response = await callOperation(layout, "SendOutgoingDocumentMessage", { RecipientEmail: recipient, Message: message });
-            window.alert(response.textContent);
+            await layout.getService($OutgoingUi).showInfo(response.textContent || "Сообщение отправлено.");
         }
     }
 }
@@ -111,7 +100,7 @@ export async function AgoraTasks(sender: EventSender): Promise<void>
     try
     {
         const choices = await loadChoices(layout);
-        const result = await showActionDialog("Действия по исходящему письму", choices);
+        const result = await layout.getService($OutgoingUi).chooseAction("Действия по исходящему письму", choices);
 
         if (result)
         {
@@ -120,6 +109,6 @@ export async function AgoraTasks(sender: EventSender): Promise<void>
     }
     catch (error)
     {
-        showError(error);
+        await showError(layout, error);
     }
 }

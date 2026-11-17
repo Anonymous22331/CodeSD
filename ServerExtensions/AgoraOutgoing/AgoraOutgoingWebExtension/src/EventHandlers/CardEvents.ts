@@ -1,4 +1,5 @@
 import type { EventSender, SavingArguments } from "../Models/AgoraLayout";
+import { $OutgoingUi } from "../Services/Abstractions/IOutgoingUiService";
 import { callOperation } from "../Services/OutgoingController";
 import { applyContext, getControl, getLayout, getReferenceId, getValue, hasFlag, isEditing, isUnsaved, loadCreationDefaults, showError } from "../Services/LayoutService";
 
@@ -32,12 +33,12 @@ export async function AgoraOpened(sender: EventSender): Promise<void>
     }
     catch (error)
     {
-        showError(error);
+        await showError(layout, error);
     }
 }
 
 /** Проверяет обязательные поля и допустимость изменения журнала до сохранения. */
-export function AgoraSaving(sender: EventSender, args: SavingArguments): void
+export async function AgoraSaving(sender: EventSender, args: SavingArguments): Promise<void>
 {
     const layout = getLayout(sender);
     const errors: string[] = [];
@@ -92,7 +93,7 @@ export function AgoraSaving(sender: EventSender, args: SavingArguments): void
     if (errors.length > 0)
     {
         args.cancel();
-        window.alert(errors.join("\n"));
+        await layout.getService($OutgoingUi).showError(errors.join("\n"));
         return;
     }
 
@@ -101,13 +102,19 @@ export function AgoraSaving(sender: EventSender, args: SavingArguments): void
         return;
     }
 
-    args.deferred = callOperation(layout, "ValidateOutgoingJournalChange", {
-        Journal: getReferenceId(getValue(layout, "agoraJournal"))
-    }).catch(error => {
+    args.wait();
+    try
+    {
+        await callOperation(layout, "ValidateOutgoingJournalChange", {
+            Journal: getReferenceId(getValue(layout, "agoraJournal"))
+        });
+        args.accept();
+    }
+    catch (error)
+    {
         args.cancel();
-        showError(error);
-        throw error;
-    });
+        await showError(layout, error);
+    }
 }
 
 /** Выдаёт временный номер после сохранения и обновляет серверный контекст. */
@@ -140,7 +147,7 @@ export async function AgoraSaved(sender: EventSender): Promise<void>
     }
     catch (error)
     {
-        showError(error);
+        await showError(layout, error);
     }
     finally
     {

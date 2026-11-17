@@ -1,24 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Web.Mvc;
+using Autofac;
 using DocsVision.Platform.WebClient;
 using DocsVision.WebClient.Extensibility;
-using DocsVision.Platform.ObjectManager;
-using DocsVision.Platform.ObjectModel;
-using DocsVision.BackOffice.ObjectModel;
-using DocsVision.BackOffice.ObjectModel.Services;
-using DocsVision.WebClientLibrary.ObjectModel.SolutionsDirectory.Export;
 
-[assembly: System.Reflection.AssemblyVersion("1.0.1.0")]
+[assembly: System.Reflection.AssemblyVersion("1.1.0.0")]
 namespace Agora.Outgoing.Web
 {
+    /// <summary>Подключает сервисы и HTTP-адаптер исходящих писем.</summary>
     public sealed class AgoraWebExtension : WebClientExtension
     {
-        /// <summary>
-        /// Создаёт серверное расширение Web-клиента АГОРА.
-        /// </summary>
+        /// <summary>Создает точку входа серверного расширения.</summary>
         public AgoraWebExtension(IServiceProvider services) : base(services)
         {
         }
@@ -35,20 +28,30 @@ namespace Agora.Outgoing.Web
         {
             get
             {
-                return new Version(1, 0, 1, 0);
+                return new Version(1, 1, 0, 0);
             }
         }
 
-        /// <summary>
-        /// Регистрирует контроллеры серверного расширения.
-        /// </summary>
+        /// <summary>Регистрирует сервисы без состояния пользовательской сессии.</summary>
+        public override void InitializeContainer(ContainerBuilder builder)
+        {
+            builder.RegisterType<OutgoingCreationService>().As<IOutgoingCreationService>().SingleInstance();
+            builder.RegisterType<OutgoingActionService>().As<IOutgoingActionService>().SingleInstance();
+            builder.RegisterType<OutgoingSetupService>().As<IOutgoingSetupService>().InstancePerDependency();
+        }
+
+        /// <summary>Сохраняет маршруты MVC установленного Web-клиента 5.5.</summary>
         protected override Dictionary<Type, Func<IController>> GetControllerActivators(IServiceProvider services)
         {
             return new Dictionary<Type, Func<IController>>
             {
                 {
                     typeof(AgoraOutgoingController),
-                    () => new AgoraOutgoingController((ICurrentObjectContextProvider)services.GetService(typeof(ICurrentObjectContextProvider)))
+                    () => new AgoraOutgoingController(
+                        (ICurrentObjectContextProvider)services.GetService(typeof(ICurrentObjectContextProvider)),
+                        (IOutgoingCreationService)services.GetService(typeof(IOutgoingCreationService)),
+                        (IOutgoingActionService)services.GetService(typeof(IOutgoingActionService)),
+                        (IOutgoingSetupService)services.GetService(typeof(IOutgoingSetupService)))
                 }
             };
         }

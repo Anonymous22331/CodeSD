@@ -1,3 +1,5 @@
+import type { ICancelableEventArgs } from "@docsvision/webclient/System/ICancelableEventArgs";
+import type { LayoutControl } from "@docsvision/webclient/System/BaseControl";
 import type { Layout } from "@docsvision/webclient/System/Layout";
 
 /** Значение справочного поля исходящей карточки. */
@@ -9,8 +11,7 @@ export interface DirectoryValue
 }
 
 /** Параметры используемых стандартных контролов Web-клиента. */
-export interface AgoraControl
-{
+export type AgoraControl = LayoutControl & {
     params: {
         value?: unknown;
         editMode?: number;
@@ -21,10 +22,10 @@ export interface AgoraControl
         rows?: readonly unknown[];
         files?: ReadonlyArray<{ data?: { isMain?: boolean } }>;
     };
-}
+};
 
 /** Разметка платформы с локальным состоянием обработчиков АГОРА. */
-export type AgoraLayout = Pick<Layout, "controls" | "cardInfo" | "layoutInfo" | "saveCard" | "reloadFromServer"> & {
+export type AgoraLayout = Pick<Layout, "getService" | "controls" | "cardInfo" | "layoutInfo" | "saveCard" | "reloadFromServer"> & {
     __agoraContext?: Element;
     __agoraPersisted?: boolean;
     __agoraNumbering?: boolean;
@@ -36,11 +37,7 @@ export type AgoraLayout = Pick<Layout, "controls" | "cardInfo" | "layoutInfo" | 
 export type EventSender = AgoraLayout | { layout: AgoraLayout };
 
 /** Аргументы отменяемого события сохранения платформы. */
-export interface SavingArguments
-{
-    cancel(): void;
-    deferred?: Promise<unknown>;
-}
+export type SavingArguments = ICancelableEventArgs<unknown>;
 
 /** Начальные значения новой исходящей карточки. */
 export interface CreationDefaults

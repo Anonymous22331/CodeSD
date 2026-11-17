@@ -11,7 +11,10 @@ async function buildExtension(): Promise<void>
     const output = resolve(project, "dist");
     const modules = [
         "@docsvision/webclient/System/ExtensionManager",
-        "@docsvision/webclient/System/UrlStore"
+        "@docsvision/webclient/System/Service",
+        "@docsvision/webclient/System/ServiceUtils",
+        "@docsvision/webclient/Platform/ExistingCardRouteHelpers",
+        "react"
     ];
 
     const result = await build({
@@ -28,12 +31,13 @@ async function buildExtension(): Promise<void>
     });
 
     // Обёртка генерируется сборкой; её не редактируют как исходный JavaScript.
-    const prefix = `define(${JSON.stringify(modules)}, function (manager, urls) {
+    const prefix = `define(${JSON.stringify(modules)}, function (manager, service, utils, routes, react) {
     "use strict";
     var exports = {};
+    var loadedModules = [manager, service, utils, routes, react];
     function require(name) {
-        if (name === ${JSON.stringify(modules[0])}) { return manager; }
-        if (name === ${JSON.stringify(modules[1])}) { return urls; }
+        var index = ${JSON.stringify(modules)}.indexOf(name);
+        if (index >= 0) { return loadedModules[index]; }
         throw new Error("Unknown external module: " + name);
     }
 `;
@@ -43,7 +47,7 @@ async function buildExtension(): Promise<void>
     await copyFile(resolve(project, "src/Styles/extension.css"), resolve(output, "extension.css"));
     await writeFile(resolve(output, "build.json"), JSON.stringify({
         source: "src/Index.ts",
-        version: "1.1.0",
+        version: "1.2.0",
         format: "AMD",
         target: "Docsvision Web-client 5.5",
         sha256: createHash("sha256").update(artifact).digest("hex")
