@@ -5,7 +5,7 @@ using Autofac;
 using DocsVision.Platform.WebClient;
 using DocsVision.WebClient.Extensibility;
 
-[assembly: System.Reflection.AssemblyVersion("1.1.0.0")]
+[assembly: System.Reflection.AssemblyVersion("1.1.1.0")]
 namespace Agora.Outgoing.Web
 {
     /// <summary>Подключает сервисы и HTTP-адаптер исходящих писем.</summary>
@@ -28,7 +28,7 @@ namespace Agora.Outgoing.Web
         {
             get
             {
-                return new Version(1, 1, 0, 0);
+                return new Version(1, 1, 1, 0);
             }
         }
 
@@ -37,7 +37,6 @@ namespace Agora.Outgoing.Web
         {
             builder.RegisterType<OutgoingCreationService>().As<IOutgoingCreationService>().SingleInstance();
             builder.RegisterType<OutgoingActionService>().As<IOutgoingActionService>().SingleInstance();
-            builder.RegisterType<OutgoingSetupService>().As<IOutgoingSetupService>().InstancePerDependency();
         }
 
         /// <summary>Сохраняет маршруты MVC установленного Web-клиента 5.5.</summary>
@@ -50,8 +49,7 @@ namespace Agora.Outgoing.Web
                     () => new AgoraOutgoingController(
                         (ICurrentObjectContextProvider)services.GetService(typeof(ICurrentObjectContextProvider)),
                         (IOutgoingCreationService)services.GetService(typeof(IOutgoingCreationService)),
-                        (IOutgoingActionService)services.GetService(typeof(IOutgoingActionService)),
-                        (IOutgoingSetupService)services.GetService(typeof(IOutgoingSetupService)))
+                        (IOutgoingActionService)services.GetService(typeof(IOutgoingActionService)))
                 }
             };
         }

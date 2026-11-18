@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Reflection;
-using System.Runtime.InteropServices;
 using Agora.Outgoing.Workflow;
 
 internal static class Program
@@ -14,36 +12,20 @@ internal static class Program
     {
         try
         {
-            Bootstrap.Initialize();
-            if (args.Length < 1 || args.Length > 2)
+            PlatformAssemblyResolver.Initialize();
+            if (args.Length != 1)
             {
-                throw new ArgumentException("Specify delivery, archive, access, registration, notifications, crl, smtp, migrate, inspect-processes or migrate-tasks");
+                throw new ArgumentException("Specify delivery, archive, access, registration, notifications, crl or smtp");
             }
 
             string mode = args[0];
-            if (mode == "migrate")
-            {
-                ProcessMigration.Apply(false);
-            }
-            else if (mode == "migrate-client")
-            {
-                ClientScriptMigration.Apply();
-            }
-            else if (mode == "inspect-processes")
-            {
-                ProcessMigration.Apply(true);
-            }
-            else if (mode == "migrate-tasks")
-            {
-                MigrateTasks(args.Length == 2 ? args[1] : null);
-            }
-            else if (mode == "smtp")
+            if (mode == "smtp")
             {
                 AgoraTestSmtp.Run(@"C:\ProgramData\Docsvision\AGORA-OUT\test-mailbox", 2525);
             }
             else
             {
-                Bootstrap.Run(mode);
+                Runtime.Run(mode);
             }
 
             return 0;
@@ -55,59 +37,4 @@ internal static class Program
         }
     }
 
-    /// <summary>
-    /// Заменяет команды фоновых заданий на запуск C#-обработчиков.
-    /// </summary>
-    private static void MigrateTasks(string password)
-    {
-        dynamic scheduler = Activator.CreateInstance(Type.GetTypeFromProgID("Schedule.Service", true));
-        scheduler.Connect();
-        dynamic folder = scheduler.GetFolder("\\");
-        try
-        {
-            foreach (string name in new[]
-            {
-                "AccessPolicy",
-                "Certificate Revocation Refresh",
-                "Test SMTP",
-                "DailyArchive",
-                "Notifications",
-                "Registration"
-            }
-
-            )
-            {
-                dynamic task = folder.GetTask("AGORA-OUT " + name);
-                dynamic definition = task.Definition;
-                string backup = @"C:\AGORA-OUT\csharp-runtime\task-" + name + ".xml";
-                if (!File.Exists(backup))
-                {
-                    File.WriteAllText(backup, (string)task.Xml);
-                }
-
-                string mode = name == "AccessPolicy" ? "access" : name == "Certificate Revocation Refresh" ? "crl" : name == "Test SMTP" ? "smtp" : name == "DailyArchive" ? "archive" : name == "Notifications" ? "notifications" : "registration";
-                definition.Actions.Clear();
-                dynamic action = definition.Actions.Create(0);
-                action.Path = @"C:\AGORA-OUT\csharp-runtime\Agora.Outgoing.Runner.exe";
-                action.Arguments = mode;
-                action.WorkingDirectory = @"C:\AGORA-OUT\csharp-runtime";
-                int logon = (int)definition.Principal.LogonType;
-                dynamic registered = folder.RegisterTaskDefinition((string)task.Name, definition, 4, (string)definition.Principal.UserId, logon == 1 ? password : null, logon, null);
-                if (name == "Test SMTP")
-                {
-                    if ((int)task.State == 4)
-                    {
-                        task.Stop(0);
-                    }
-
-                    registered.Run(null);
-                }
-            }
-        }
-        finally
-        {
-            Marshal.ReleaseComObject(folder);
-            Marshal.ReleaseComObject(scheduler);
-        }
-    }
 }

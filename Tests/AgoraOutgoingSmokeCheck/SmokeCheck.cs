@@ -14,7 +14,7 @@ internal static class SmokeCheck
     {
         try
         {
-            Bootstrap.Initialize();
+            PlatformAssemblyResolver.Initialize();
             bool rejected = false;
             var xml = new XmlDocument();
             xml.LoadXml("<SignatureConfirmationResult status='error'/>");

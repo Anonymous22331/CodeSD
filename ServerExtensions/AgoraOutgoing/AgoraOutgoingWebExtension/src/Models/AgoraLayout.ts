@@ -31,7 +31,6 @@ export type AgoraLayout = Pick<Layout, "getService" | "controls" | "cardInfo" | 
     __agoraNumbering?: boolean;
     __agoraExecutingAction?: boolean;
     __agoraSavePurpose?: string | null;
-    __agoraJournalChanged?: boolean;
 };
 
 export type EventSender = AgoraLayout | { layout: AgoraLayout };

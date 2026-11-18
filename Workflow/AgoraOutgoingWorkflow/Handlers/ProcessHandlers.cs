@@ -10,7 +10,8 @@
         /// </summary>
         public static void RegisterAndNotify()
         {
-            Bootstrap.Run("delivery");
+            PlatformAssemblyResolver.Initialize();
+            Runtime.Run("delivery");
         }
 
         /// <summary>
@@ -18,7 +19,8 @@
         /// </summary>
         public static void ArchiveSentDocuments()
         {
-            Bootstrap.Run("archive");
+            PlatformAssemblyResolver.Initialize();
+            Runtime.Run("archive");
         }
     }
 }

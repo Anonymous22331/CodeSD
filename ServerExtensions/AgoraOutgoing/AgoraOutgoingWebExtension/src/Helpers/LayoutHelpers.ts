@@ -1,6 +1,6 @@
 import type { AgoraControl, AgoraLayout, DirectoryValue, EventSender } from "../Models/AgoraLayout";
-import { $OutgoingUi } from "./Abstractions/IOutgoingUiService";
-import { getCreationDefaults } from "./OutgoingController";
+import { $OutgoingUi } from "../Services/Abstractions/IOutgoingUiService";
+import { $Outgoing } from "../Services/Abstractions/IOutgoingService";
 
 /** Получает разметку из аргумента события платформы. */
 export function getLayout(sender: EventSender): AgoraLayout
@@ -164,7 +164,7 @@ function setDefault(layout: AgoraLayout, name: string, model: DirectoryValue | u
 /** Заполняет инициатора, подразделение, журнал и остальные начальные значения. */
 export async function loadCreationDefaults(layout: AgoraLayout): Promise<void>
 {
-    const defaults = await getCreationDefaults(layout, getReferenceId(getValue(layout, "agoraJournal")));
+    const defaults = await layout.getService($Outgoing).getCreationDefaults(getReferenceId(getValue(layout, "agoraJournal")));
     setDefault(layout, "agoraAuthor", defaults.author);
     setDefault(layout, "agoraRegistrationPlace", defaults.unit);
     setDefault(layout, "agoraJournal", defaults.journal);

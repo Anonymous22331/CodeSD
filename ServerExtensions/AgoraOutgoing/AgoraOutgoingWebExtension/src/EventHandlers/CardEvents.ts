@@ -1,7 +1,7 @@
 import type { EventSender, SavingArguments } from "../Models/AgoraLayout";
 import { $OutgoingUi } from "../Services/Abstractions/IOutgoingUiService";
-import { callOperation } from "../Services/OutgoingController";
-import { applyContext, getControl, getLayout, getReferenceId, getValue, hasFlag, isEditing, isUnsaved, loadCreationDefaults, showError } from "../Services/LayoutService";
+import { $Outgoing } from "../Services/Abstractions/IOutgoingService";
+import { applyContext, getControl, getLayout, getReferenceId, getValue, hasFlag, isEditing, isUnsaved, loadCreationDefaults, showError } from "../Helpers/LayoutHelpers";
 
 /** Заполняет карточку и применяет серверные права при открытии разметки. */
 export async function AgoraOpened(sender: EventSender): Promise<void>
@@ -16,12 +16,12 @@ export async function AgoraOpened(sender: EventSender): Promise<void>
             return;
         }
 
-        const context = await callOperation(layout, "GetOutgoingWebContext", { Initialize: isEditing(layout) });
+        const context = await layout.getService($Outgoing).execute(layout.cardInfo.id, "GetOutgoingWebContext", { Initialize: isEditing(layout) });
         applyContext(layout, context);
 
         if (isEditing(layout) && hasFlag(context, "canStart") && !context.getAttribute("temporaryNumber"))
         {
-            await callOperation(layout, "AssignDraftNumber");
+            await layout.getService($Outgoing).execute(layout.cardInfo.id, "AssignDraftNumber");
             await layout.reloadFromServer();
             return;
         }
@@ -105,7 +105,7 @@ export async function AgoraSaving(sender: EventSender, args: SavingArguments): P
     args.wait();
     try
     {
-        await callOperation(layout, "ValidateOutgoingJournalChange", {
+        await layout.getService($Outgoing).execute(layout.cardInfo.id, "ValidateOutgoingJournalChange", {
             Journal: getReferenceId(getValue(layout, "agoraJournal"))
         });
         args.accept();
@@ -132,12 +132,12 @@ export async function AgoraSaved(sender: EventSender): Promise<void>
 
     try
     {
-        const context = await callOperation(layout, "GetOutgoingWebContext", { Initialize: true });
+        const context = await layout.getService($Outgoing).execute(layout.cardInfo.id, "GetOutgoingWebContext", { Initialize: true });
         applyContext(layout, context);
 
         if (hasFlag(context, "canNumber"))
         {
-            const result = await callOperation(layout, "AssignDraftNumber");
+            const result = await layout.getService($Outgoing).execute(layout.cardInfo.id, "AssignDraftNumber");
 
             if (!layout.__agoraExecutingAction && (result.getAttribute("status") !== "unchanged" || hasFlag(context, "initialized")))
             {

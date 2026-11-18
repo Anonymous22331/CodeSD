@@ -15,7 +15,7 @@ import * as TaskActions from "./EventHandlers/TaskActions";
 // Имена событий совпадают с привязками в конструкторе Web-разметок.
 extensionManager.registerExtension({
     name: "AgoraOutgoing",
-    version: "1.2.0",
+    version: "1.2.1",
     layoutServices: [
         Service.fromFactory($Outgoing, (services: $RequestManager & $UrlResolver) => new OutgoingService(services)),
         Service.fromFactory($OutgoingUi, (services: $MessageBox & $RouterNavigation) => new OutgoingUiService(services))

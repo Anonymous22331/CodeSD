@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Agora.Outgoing.Workflow
 {
-    public static class Bootstrap
+    public static class PlatformAssemblyResolver
     {
         private static bool initialized;
 
@@ -13,7 +13,7 @@ namespace Agora.Outgoing.Workflow
         /// </summary>
         public static void Initialize()
         {
-            lock (typeof(Bootstrap))
+            lock (typeof(PlatformAssemblyResolver))
             {
                 if (initialized)
                 {
@@ -62,13 +62,5 @@ namespace Agora.Outgoing.Workflow
             return null;
         }
 
-        /// <summary>
-        /// Инициализирует зависимости и запускает выбранный обработчик.
-        /// </summary>
-        public static void Run(string mode)
-        {
-            Initialize();
-            Runtime.Run(mode);
-        }
     }
 }

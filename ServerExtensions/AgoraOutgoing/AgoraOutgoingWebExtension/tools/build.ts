@@ -47,7 +47,7 @@ async function buildExtension(): Promise<void>
     await copyFile(resolve(project, "src/Styles/extension.css"), resolve(output, "extension.css"));
     await writeFile(resolve(output, "build.json"), JSON.stringify({
         source: "src/Index.ts",
-        version: "1.2.0",
+        version: "1.2.1",
         format: "AMD",
         target: "Docsvision Web-client 5.5",
         sha256: createHash("sha256").update(artifact).digest("hex")

@@ -12,17 +12,14 @@ namespace Agora.Outgoing.Web
         private readonly ICurrentObjectContextProvider contextProvider;
         private readonly IOutgoingCreationService creationService;
         private readonly IOutgoingActionService actionService;
-        private readonly IOutgoingSetupService setupService;
 
         /// <summary>Принимает HTTP-запросы и вызывает сервисы исходящих писем.</summary>
         public AgoraOutgoingController(ICurrentObjectContextProvider contextProvider,
-            IOutgoingCreationService creationService, IOutgoingActionService actionService,
-            IOutgoingSetupService setupService)
+            IOutgoingCreationService creationService, IOutgoingActionService actionService)
         {
             this.contextProvider = contextProvider;
             this.creationService = creationService;
             this.actionService = actionService;
-            this.setupService = setupService;
         }
 
         /// <summary>Проверяет запрос и получает контекст текущего пользователя.</summary>
@@ -54,14 +51,15 @@ namespace Agora.Outgoing.Web
             SessionContext context = GetContext();
             if (request.Method == "GetOutgoingCreationDefaults")
             {
-                return Success(creationService.GetDefaults(context, request.Journal));
+                var defaultsResponse = new CommonResponse<CreationDefaults>();
+                defaultsResponse.InitializeSuccess(creationService.GetDefaults(context, request.Journal));
+                return Content(JsonHelper.SerializeToJson(defaultsResponse), "application/json");
             }
 
             OutgoingActionResult result = actionService.Execute(context, request);
             var response = new CommonResponse<OutgoingActionResult>();
             if (request.CardId != Guid.Empty)
             {
-                context.AdvancedCardManager.GetCardData(request.CardId, true).Refresh();
                 response.InitializeSuccess(context.AdvancedCardManager.GetCardTimestampModel(request.CardId, true), result);
             }
             else
@@ -72,27 +70,5 @@ namespace Agora.Outgoing.Web
             return Content(JsonHelper.SerializeToJson(response), "application/json");
         }
 
-        /// <summary>Импортирует разметку после создания резервной копии.</summary>
-        [HttpPost]
-        public ContentResult PatchCreationLayout()
-        {
-            return Success(setupService.PatchCreationLayout(GetContext()));
-        }
-
-        /// <summary>Настраивает решения, операции и ролевую модель.</summary>
-        [HttpPost]
-        public ContentResult Bootstrap(bool standardOnly = false)
-        {
-            Server.ScriptTimeout = 1800;
-            return Success(setupService.Bootstrap(GetContext(), standardOnly));
-        }
-
-        /// <summary>Сериализует данные в стандартный ответ Web-клиента.</summary>
-        private ContentResult Success<T>(T data)
-        {
-            var response = new CommonResponse<T>();
-            response.InitializeSuccess(data);
-            return Content(JsonHelper.SerializeToJson(response), "application/json");
-        }
     }
 }

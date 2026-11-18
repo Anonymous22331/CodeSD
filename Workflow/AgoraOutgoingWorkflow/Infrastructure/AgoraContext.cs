@@ -33,16 +33,6 @@ namespace Agora.Outgoing.Deployment
         }
 
         /// <summary>
-        /// Открывает контекст Docsvision с указанными учётными данными.
-        /// </summary>
-        public static ObjectContext OpenAs(string baseName, string userName, string password)
-        {
-            var manager = SessionManager.CreateInstance();
-            manager.Connect("http://localhost/DocsVision/StorageServer/StorageServerService.asmx", baseName, userName, password);
-            return Initialize(manager.CreateSession());
-        }
-
-        /// <summary>
         /// Регистрирует сервисы и преобразователи объектного контекста.
         /// </summary>
         private static ObjectContext Initialize(UserSession session)
@@ -62,14 +52,6 @@ namespace Agora.Outgoing.Deployment
             Context.AddService<IMetadataManager>(DocsVisionObjectFactory.CreateMetadataManager(provider, Session));
             Context.AddService<IMetadataProvider>(provider);
             return Context;
-        }
-
-        /// <summary>
-        /// Выполняет штатный переход состояния карточки.
-        /// </summary>
-        public static void MoveState(DocsVision.BackOffice.ObjectModel.BaseCard card, DocsVision.BackOffice.ObjectModel.StatesStateMachineBranch branch)
-        {
-            Context.GetService<IStateService>().ChangeState(card, branch);
         }
 
         /// <summary>

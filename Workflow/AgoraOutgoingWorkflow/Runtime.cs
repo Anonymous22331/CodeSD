@@ -199,10 +199,6 @@ namespace Agora.Outgoing.Workflow
                         {
                             RegisterPending();
                         }
-                        else if (mode == "audit")
-                        {
-                            Audit();
-                        }
                         else
                         {
                             throw new ArgumentException("Unknown mode: " + mode);
@@ -234,15 +230,6 @@ namespace Agora.Outgoing.Workflow
                     }
                 }
             }
-        }
-
-        /// <summary>
-        /// Проверяет подключение и доступ к исходящим карточкам.
-        /// </summary>
-        private static void Audit()
-        {
-            var cards = Session.CardManager.FindCards(Query(null).GetXml());
-            Log("audit", new { status = "connected", cards = cards.Count, identity = System.Security.Principal.WindowsIdentity.GetCurrent().Name });
         }
 
         /// <summary>

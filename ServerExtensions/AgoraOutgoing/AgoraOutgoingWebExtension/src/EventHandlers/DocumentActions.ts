@@ -1,7 +1,7 @@
 import type { EventSender } from "../Models/AgoraLayout";
 import { $OutgoingUi } from "../Services/Abstractions/IOutgoingUiService";
-import { callOperation } from "../Services/OutgoingController";
-import { getLayout, getValue, hasFlag, isUnsaved, loadCreationDefaults, saveIfEditing, showError, updateRouteCaption } from "../Services/LayoutService";
+import { $Outgoing } from "../Services/Abstractions/IOutgoingService";
+import { getLayout, getValue, isUnsaved, loadCreationDefaults, saveIfEditing, showError, updateRouteCaption } from "../Helpers/LayoutHelpers";
 
 /** Сохраняет документ, выполняет серверную операцию и обновляет карточку. */
 async function executeAction(sender: EventSender, method: string): Promise<void>
@@ -17,7 +17,7 @@ async function executeAction(sender: EventSender, method: string): Promise<void>
             await saveIfEditing(layout);
         }
 
-        await callOperation(layout, method);
+        await layout.getService($Outgoing).execute(layout.cardInfo.id, method);
         await layout.reloadFromServer();
     }
     catch (error)
@@ -89,10 +89,6 @@ export async function AgoraJournalChanged(sender: EventSender): Promise<void>
         if (isUnsaved(layout))
         {
             await loadCreationDefaults(layout);
-        }
-        else if (layout.__agoraContext && hasFlag(layout.__agoraContext, "draftEdit"))
-        {
-            layout.__agoraJournalChanged = true;
         }
     }
     catch (error)

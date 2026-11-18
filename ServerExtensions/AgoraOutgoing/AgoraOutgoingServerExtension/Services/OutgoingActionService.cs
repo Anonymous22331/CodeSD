@@ -29,12 +29,10 @@ namespace Agora.Outgoing.Web
                 "GetOutgoingTaskActions",
                 "CompleteOutgoingTask",
                 "MarkOutgoingSent",
-                "ConfirmOutgoingSignature",
                 "GetOutgoingDocumentOperations",
                 "GetOutgoingApprovalHistory",
                 "CreateOutgoingFamiliarizationDraft",
-                "SendOutgoingDocumentMessage",
-                "RequestOutgoingAccessRefresh"
+                "SendOutgoingDocumentMessage"
             };
             if (!allowed.Contains(name))
             {

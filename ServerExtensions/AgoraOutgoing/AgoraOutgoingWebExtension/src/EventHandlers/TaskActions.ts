@@ -1,14 +1,14 @@
 import type { ActionChoice, AgoraLayout, DialogResult, EventSender } from "../Models/AgoraLayout";
 import { $OutgoingUi } from "../Services/Abstractions/IOutgoingUiService";
-import { callOperation } from "../Services/OutgoingController";
-import { getLayout, hasFlag, saveIfEditing, showError } from "../Services/LayoutService";
+import { $Outgoing } from "../Services/Abstractions/IOutgoingService";
+import { getLayout, hasFlag, saveIfEditing, showError } from "../Helpers/LayoutHelpers";
 
 /** Получает доступные задания, решения и операции документа. */
 async function loadChoices(layout: AgoraLayout): Promise<ActionChoice[]>
 {
     const [tasks, operations] = await Promise.all([
-        callOperation(layout, "GetOutgoingTaskActions"),
-        callOperation(layout, "GetOutgoingDocumentOperations")
+        layout.getService($Outgoing).execute(layout.cardInfo.id, "GetOutgoingTaskActions"),
+        layout.getService($Outgoing).execute(layout.cardInfo.id, "GetOutgoingDocumentOperations")
     ]);
     const choices: ActionChoice[] = [];
 
@@ -65,14 +65,14 @@ async function executeChoice(layout: AgoraLayout, result: DialogResult): Promise
             await saveIfEditing(layout);
         }
 
-        await callOperation(layout, "CompleteOutgoingTask", { TaskId: choice.taskId, Semantic: choice.semantic, Comment: result.comment });
+        await layout.getService($Outgoing).execute(layout.cardInfo.id, "CompleteOutgoingTask", { TaskId: choice.taskId, Semantic: choice.semantic, Comment: result.comment });
         await layout.reloadFromServer();
         return;
     }
 
     if (choice.operation === 27 || choice.operation === 35)
     {
-        const response = await callOperation(layout, choice.operation === 27 ? "CreateOutgoingFamiliarizationDraft" : "GetOutgoingApprovalHistory");
+        const response = await layout.getService($Outgoing).execute(layout.cardInfo.id, choice.operation === 27 ? "CreateOutgoingFamiliarizationDraft" : "GetOutgoingApprovalHistory");
         await layout.getService($OutgoingUi).openCard(response.getAttribute("reconcile") || "");
     }
     else if (choice.operation === 28)
@@ -86,7 +86,7 @@ async function executeChoice(layout: AgoraLayout, result: DialogResult): Promise
         const message = result.comment || await layout.getService($OutgoingUi).input("Текст сообщения", true);
         if (message)
         {
-            const response = await callOperation(layout, "SendOutgoingDocumentMessage", { RecipientEmail: recipient, Message: message });
+            const response = await layout.getService($Outgoing).execute(layout.cardInfo.id, "SendOutgoingDocumentMessage", { RecipientEmail: recipient, Message: message });
             await layout.getService($OutgoingUi).showInfo(response.textContent || "Сообщение отправлено.");
         }
     }
